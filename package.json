@@ -1,0 +1,23 @@
+{
+  "name": "@dword-design/base-sass",
+  "version": "0.1.0",
+  "repository": "https://github.com/dword-design/base-sass",
+  "author": "Sebastian Landwehr <info@dword-design.de>",
+  "license": "MIT",
+  "main": "dist/index.js",
+  "bin": {
+    "base-sass": "./dist/cli.js"
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "prepare": "base prepare",
+    "start": "base start",
+    "test": "base test"
+  },
+  "dependencies": {
+    "@dword-design/base": "^1.0.0",
+    "node-sass": "^4.13.0"
+  }
+}
