@@ -1129,9 +1129,9 @@ aws-sign2@~0.7.0:
   integrity sha1-tG6JCTSpWR8tL2+G1+ap8bP+dqg=
 
 aws4@^1.8.0:
-  version "1.8.0"
-  resolved "https://registry.yarnpkg.com/aws4/-/aws4-1.8.0.tgz#f0e003d9ca9e7f59c7a508945d7b2ef9a04a542f"
-  integrity sha512-ReZxvNHIOv88FlT7rxcXIIC0fPt4KZqZbOlivyWtXLt8ESx84zd3kMC6iK5jVeS2qt+g7ftS7ye4fi06X5rtRQ==
+  version "1.9.0"
+  resolved "https://registry.yarnpkg.com/aws4/-/aws4-1.9.0.tgz#24390e6ad61386b0a747265754d2a17219de862c"
+  integrity sha512-Uvq6hVe90D0B2WEnUqtdgY1bATGz3mw33nH9Y+dmA+w5DHvUmBgkr5rM/KCHpCsiFNRUfokW/szpPPgMK2hm4A==
 
 babel-eslint@^11.0.0-beta.0:
   version "11.0.0-beta.1"
@@ -1399,7 +1399,6 @@ chardet@^0.7.0:
 
 chdir@dword-design/node-chdir#fork:
   version "0.0.0"
-  uid "55004473579e2b8d293ced5410af5948793971b6"
   resolved "https://codeload.github.com/dword-design/node-chdir/tar.gz/55004473579e2b8d293ced5410af5948793971b6"
 
 child-process-promise@^2.2.1:
@@ -1788,7 +1787,6 @@ delegates@^1.0.0:
 
 depcheck@dword-design/depcheck#fork:
   version "0.0.1"
-  uid "9d6759f8d53b764dbd3183e19ea1375426a4b3a0"
   resolved "https://codeload.github.com/dword-design/depcheck/tar.gz/9d6759f8d53b764dbd3183e19ea1375426a4b3a0"
   dependencies:
     "@babel/parser" "^7.3.1"
@@ -2818,7 +2816,6 @@ inquirer@^7.0.0:
 
 install-self@dword-design/install-self#fork:
   version "1.0.0-beta.7"
-  uid "36616b93446a4606414fbab35adbd8989106d52b"
   resolved "https://codeload.github.com/dword-design/install-self/tar.gz/36616b93446a4606414fbab35adbd8989106d52b"
   dependencies:
     fs-extra "^8.1.0"
@@ -4039,6 +4036,11 @@ osenv@0, osenv@^0.1.4:
   dependencies:
     os-homedir "^1.0.0"
     os-tmpdir "^1.0.0"
+
+output-files@^1.1.8:
+  version "1.1.8"
+  resolved "https://registry.yarnpkg.com/output-files/-/output-files-1.1.8.tgz#399af6fc6b034f647d29870984bb22312cef44a4"
+  integrity sha512-hgHPNU/ZCubuTVqtukxx7xFYLLBtQYURLujPxvNy52FyGzAuSuz/tzhg+kKUgw03/BBRpfhAXm9cRj1WWwBB0g==
 
 p-finally@^1.0.0:
   version "1.0.0"
@@ -5314,6 +5316,20 @@ tinycolor2@^1.4.1:
   resolved "https://registry.yarnpkg.com/tinycolor2/-/tinycolor2-1.4.1.tgz#f4fad333447bc0b07d4dc8e9209d8f39a8ac77e8"
   integrity sha1-9PrTM0R7wLB9TcjpIJ2POaisd+g=
 
+tmp-promise@^2.0.2:
+  version "2.0.2"
+  resolved "https://registry.yarnpkg.com/tmp-promise/-/tmp-promise-2.0.2.tgz#ee605edb10f100954be5dd8b9dbe1bfd56194202"
+  integrity sha512-zl71nFWjPKW2KXs+73gEk8RmqvtAeXPxhWDkTUoa3MSMkjq3I+9OeknjF178MQoMYsdqL730hfzvNfEkePxq9Q==
+  dependencies:
+    tmp "0.1.0"
+
+tmp@0.1.0:
+  version "0.1.0"
+  resolved "https://registry.yarnpkg.com/tmp/-/tmp-0.1.0.tgz#ee434a4e22543082e294ba6201dcc6eafefa2877"
+  integrity sha512-J7Z2K08jbGcdA1kkQpJSqLF6T0tdQqpR2pnSUXsIchbPdTI9v3e85cLW0d6WDhwuAleOV71j2xWs8qMPfK7nKw==
+  dependencies:
+    rimraf "^2.6.3"
+
 tmp@^0.0.33:
   version "0.0.33"
   resolved "https://registry.yarnpkg.com/tmp/-/tmp-0.0.33.tgz#6d34335889768d21b2bcda0aa277ced3b1bfadf9"
@@ -5599,6 +5615,14 @@ window-size@^0.1.4:
   version "0.1.4"
   resolved "https://registry.yarnpkg.com/window-size/-/window-size-0.1.4.tgz#f8e1aa1ee5a53ec5bf151ffa09742a6ad7697876"
   integrity sha1-+OGqHuWlPsW/FR/6CXQqatdpeHY=
+
+with-local-tmp-dir@^2.2.2:
+  version "2.2.2"
+  resolved "https://registry.yarnpkg.com/with-local-tmp-dir/-/with-local-tmp-dir-2.2.2.tgz#0e2cd2939a7c8a46753434848045f12d74754b73"
+  integrity sha512-LMCM6mp8okYRO9oe3E+RtQqjq5fZl2/6Ru6BC9tRP/AEXRAcP+9JA9uWJWlGiWt2e17eFmQoYT6y1tf1yx6qwQ==
+  dependencies:
+    chdir dword-design/node-chdir#fork
+    tmp-promise "^2.0.2"
 
 word-wrap@~1.2.3:
   version "1.2.3"
