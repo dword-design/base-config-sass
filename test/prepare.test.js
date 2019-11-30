@@ -43,6 +43,15 @@ export const it = () => withLocalTmpDir(__dirname, async () => {
     body {
       background: red; }
   ` + '\n')
-  expect(stdout).toMatch(/^Copying config files …\nUpdating README.md …\nRendering Complete, saving \.css file\.\.\.\nWrote CSS to .*?\/dist\/foo\/test\.css\nRendering Complete, saving \.css file\.\.\.\nWrote CSS to .*?\/dist\/index\.css\nWrote 2 CSS files to .*?\/dist\n$/)
+  expect(stdout).toMatch(new RegExp(endent`
+    ^Copying config files …
+    Updating README.md …
+    Rendering Complete, saving \.css file\.\.\.
+    Wrote CSS to .*?\/dist\/foo\/test\.css
+    Rendering Complete, saving \.css file\.\.\.
+    Wrote CSS to .*?\/dist\/index\.css
+    Wrote 2 CSS files to .*?\/dist
+    $
+  `))
 })
 export const timeout = 10000
