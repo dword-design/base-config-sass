@@ -1429,7 +1429,7 @@ chokidar@^2.0.4, chokidar@^2.1.8:
   optionalDependencies:
     fsevents "^1.2.7"
 
-chokidar@^3.2.3:
+chokidar@^3.2.3, chokidar@^3.3.0:
   version "3.3.0"
   resolved "https://registry.yarnpkg.com/chokidar/-/chokidar-3.3.0.tgz#12c0714668c55800f659e262d4962a97faf554a6"
   integrity sha512-dGmKLDdT3Gdl7fBUe8XK+gAtGmzy5Fn0XkkWQuYxGIgWVPPse2CxFA5mtrlD0TOHaHjEUqkWNyP1XdHoJES/4A==
@@ -5574,6 +5574,11 @@ vue-template-compiler@^2.6.10:
   dependencies:
     de-indent "^1.0.2"
     he "^1.1.0"
+
+wait-for-change@^1.1.1:
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/wait-for-change/-/wait-for-change-1.1.1.tgz#3f2211f0de705c7677dcc31a1ab1f037cd11cbc8"
+  integrity sha1-PyIR8N5wXHZ33MMaGrHwN80Ry8g=
 
 walkdir@^0.3.2:
   version "0.3.2"

@@ -1,6 +1,6 @@
 {
   "name": "@dword-design/base-sass",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "repository": "dword-design/base-sass",
   "author": "Sebastian Landwehr <info@dword-design.de>",
   "license": "MIT",
@@ -18,6 +18,8 @@
   },
   "dependencies": {
     "@dword-design/base": "^1.0.0",
+    "chokidar": "^3.3.0",
+    "debounce": "^1.2.0",
     "glob-promise": "^3.4.0",
     "node-sass": "^4.13.0",
     "node-sass-import": "^2.0.1",
@@ -34,6 +36,7 @@
   "devDependencies": {
     "expect": "^24.9.0",
     "output-files": "^1.1.8",
+    "wait-for-change": "^1.1.1",
     "with-local-tmp-dir": "^2.2.2"
   }
 }
