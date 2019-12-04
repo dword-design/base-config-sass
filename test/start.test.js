@@ -2,7 +2,6 @@ import { spawn } from 'child_process'
 import withLocalTmpDir from 'with-local-tmp-dir'
 import expect from 'expect'
 import outputFiles from 'output-files'
-import resolveBin from 'resolve-bin'
 import { minimalProjectConfig } from '@dword-design/base'
 import glob from 'glob-promise'
 import { endent, omit } from '@functions'
@@ -22,11 +21,12 @@ export const it = () => withLocalTmpDir(__dirname, async () => {
       }
     `,
   })
-  const childProcess = spawn(resolveBin.sync('@dword-design/base-sass', { executable: 'base-sass' }), ['start'], { capture: ['stdout'] })
+  const childProcess = spawn('base-sass', ['start'], { capture: ['stdout'] })
     .catch(error => {
       if (error.code === null) {
         expect(error.stdout).toMatch(new RegExp(endent`
           ^Copying config files …
+          package.json valid
           Updating README.md …
           Rendering Complete, saving \.css file\.\.\.
           Wrote CSS to .*?\/dist\/index\.css
