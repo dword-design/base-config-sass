@@ -17,7 +17,7 @@
     "test": "base test"
   },
   "dependencies": {
-    "@dword-design/base": "^1.0.0",
+    "@dword-design/base": "^3.0.0",
     "chokidar": "^3.3.0",
     "debounce": "^1.2.0",
     "glob-promise": "^3.4.0",
