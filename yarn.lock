@@ -730,9 +730,9 @@
     to-fast-properties "^2.0.0"
 
 "@dword-design/babel-config@^1.0.0", "@dword-design/babel-config@^1.0.4":
-  version "1.0.6"
-  resolved "https://registry.yarnpkg.com/@dword-design/babel-config/-/babel-config-1.0.6.tgz#b24838b3ef51581e9d5e6c12e5ce89e60a96e19a"
-  integrity sha512-FmAXO5IJkwc8yB+94KoWLzP98pyBJELDv4Ihf7/UsEM+VsmJevo8e2abL4yinXNRuNQxjxAHvFA+uWzEcx5tnQ==
+  version "1.0.7"
+  resolved "https://registry.yarnpkg.com/@dword-design/babel-config/-/babel-config-1.0.7.tgz#dcd0403eb59aa6a784676a47cc3a17f10d0f29fc"
+  integrity sha512-tZvGkuyoy6u97fFKzGirqy85KHDkcPHlHlVpdAjY/PnLaevBlOyFln0GnBVoGwXN9me2f72rGe5DV+qrj/Xcxw==
   dependencies:
     "@babel/plugin-proposal-nullish-coalescing-operator" "^7.4.4"
     "@babel/plugin-proposal-optional-chaining" "^7.6.0"
@@ -742,6 +742,7 @@
     babel-plugin-add-module-exports "^1.0.2"
     babel-plugin-transform-imports "^2.0.0"
     get-package-name "^1.0.0"
+    safe-require "^1.0.3"
 
 "@dword-design/base-config-node@^1.0.0":
   version "1.3.3"
@@ -761,10 +762,10 @@
     fs-extra "^8.1.0"
     get-package-name "^1.0.0"
 
-"@dword-design/base@^3.0.0":
-  version "3.4.4"
-  resolved "https://registry.yarnpkg.com/@dword-design/base/-/base-3.4.4.tgz#ff88ceb46e37e98d1ca94a74ed07d4a83632e4f5"
-  integrity sha512-im1AGF/GKIpVSyS78Cf8pRDZFfcKaEtIL+t6O4pT50iZrZG3krrSVux8Hkw9sCS3qXweiv9ZLttft5dgJgab3g==
+"@dword-design/base@^3.5.0":
+  version "3.5.0"
+  resolved "https://registry.yarnpkg.com/@dword-design/base/-/base-3.5.0.tgz#7fb810b999a805f0a45bef767e2d0512ed1a59f9"
+  integrity sha512-iAj+moXbp3aiib5gsUhzYXCJ8jzCUwSfKvY67bZ+lu8ZMQqPZ+HroT1E8KpwTfOd6rYpYO4UGeCevvD+CEV2NQ==
   dependencies:
     "@babel/cli" "^7.6.4"
     "@babel/core" "^7.6.4"
@@ -823,9 +824,9 @@
     stable-version-regex "^1.0.1"
 
 "@dword-design/test-aliases@^1.0.0":
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/@dword-design/test-aliases/-/test-aliases-1.0.1.tgz#e489fe018905c9b17c98aabe864b96d103e55935"
-  integrity sha512-YKzlezh5nP2lrxFL4+mSRdvMppJs/NpjevE6ystWz4PD88sD8WeSvOO9fuSc0FyaUI/jFjNsBE7CLqp3x/NH7g==
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/@dword-design/test-aliases/-/test-aliases-1.0.2.tgz#38a4d45e597e9d252a9913bb8b1bac783ffc1e0d"
+  integrity sha512-juvN97z3B4T7aZtLFNqT60sLTdRlFejV4uiw8uREd+LGnI9v8a9SaPZoD+qm32IwioiZqdj94/7BYB4fvAJ2sA==
   dependencies:
     "@dword-design/functions" "^2.2.2"
     read-all-up "^1.0.1"
@@ -1462,7 +1463,6 @@ chardet@^0.7.0:
 
 chdir@dword-design/node-chdir#fork:
   version "0.0.0"
-  uid "55004473579e2b8d293ced5410af5948793971b6"
   resolved "https://codeload.github.com/dword-design/node-chdir/tar.gz/55004473579e2b8d293ced5410af5948793971b6"
 
 child-process-promise@^2.2.1:
@@ -1869,7 +1869,6 @@ delegates@^1.0.0:
 
 depcheck@dword-design/depcheck#fork:
   version "0.0.1"
-  uid c26892d97de67e476566ece801a046dbd718f21b
   resolved "https://codeload.github.com/dword-design/depcheck/tar.gz/c26892d97de67e476566ece801a046dbd718f21b"
   dependencies:
     "@babel/parser" "^7.6.4"
@@ -4987,6 +4986,11 @@ safe-regex@^1.1.0:
   dependencies:
     ret "~0.1.10"
 
+safe-require@^1.0.3:
+  version "1.0.3"
+  resolved "https://registry.yarnpkg.com/safe-require/-/safe-require-1.0.3.tgz#6ec319ed10209b1d12c7a1449b79d46d7f4f914b"
+  integrity sha1-bsMZ7RAgmx0Sx6FEm3nUbX9PkUs=
+
 safefs@^5.4.0:
   version "5.5.0"
   resolved "https://registry.yarnpkg.com/safefs/-/safefs-5.5.0.tgz#17506b894542c592b33379578177bbab9f06c085"
@@ -5147,7 +5151,7 @@ sort-object-keys@^1.1.2:
   resolved "https://registry.yarnpkg.com/sort-object-keys/-/sort-object-keys-1.1.3.tgz#bff833fe85cab147b34742e45863453c1e190b45"
   integrity sha512-855pvK+VkU7PaKYPc+Jjnmt4EzejQHyhhF33q31qG8x7maDzkeFhAAThdCYay11CISO+qAMwjOBP+fPZe0IPyg==
 
-sort-package-json@^1.22.1:
+sort-package-json@^1.22.1, sort-package-json@^1.31.0:
   version "1.31.0"
   resolved "https://registry.yarnpkg.com/sort-package-json/-/sort-package-json-1.31.0.tgz#778c652b1ee88c15337b258d3ae7e47576e4fb88"
   integrity sha512-zBdnTpMCJNZszbPcAbGIAgfRQ0A0dF/ZOsQdUHICZ6XLuIQK1Mcwp8zfkF3ySg2lT2oKxU4dVhh/9tZxGLBU0A==

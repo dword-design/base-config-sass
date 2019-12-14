@@ -1,6 +1,5 @@
-import { base } from '@dword-design/base'
-import { spawn } from 'child_process'
-import { copy, remove } from 'fs'
+import { spawn } from 'child-process-promise'
+import { copy, remove } from 'fs-extra'
 import chokidar from 'chokidar'
 import debounce from 'debounce'
 
@@ -10,7 +9,7 @@ const build = async () => {
   await spawn('node-sass', ['src', '--output', 'dist', '--importer', require.resolve('node-sass-import')], { stdio: 'inherit' })
 }
 
-export default () => base({
+export default {
   build,
   start: () => chokidar
     .watch('src')
@@ -27,4 +26,4 @@ export default () => base({
         200
       )
     ),
-})
+}

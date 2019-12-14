@@ -1,17 +1,24 @@
-import { spawn } from 'child_process'
+import { spawn } from 'child-process-promise'
 import withLocalTmpDir from 'with-local-tmp-dir'
 import expect from 'expect'
 import outputFiles from 'output-files'
-import { minimalProjectConfig } from '@dword-design/base'
+import { minimalPackageConfig, minimalProjectConfig } from '@dword-design/base'
 import glob from 'glob-promise'
-import { endent, omit } from '@functions'
-import { readFile } from 'fs'
+import { endent, omit } from '@dword-design/functions'
+import { readFile } from 'fs-extra'
 import P from 'path'
+import sortPackageJson from 'sort-package-json'
 
 export const it = () => withLocalTmpDir(__dirname, async () => {
   await outputFiles({
     ...minimalProjectConfig |> omit('src/index.js'),
     'dist/foo.txt': 'foo',
+    'package.json': JSON.stringify(sortPackageJson({
+      ...minimalPackageConfig,
+      devDependencies: {
+        '@dword-design/base-config-sass': '^1.0.0',
+      },
+    }), undefined, 2),
     'src/foo/test.sass': endent`
       $color: blue
       body
@@ -25,7 +32,7 @@ export const it = () => withLocalTmpDir(__dirname, async () => {
       }
     `,
   })
-  const { stdout } = await spawn('base-sass', ['build'], { capture: ['stdout'] })
+  const { stdout } = await spawn('base', ['build'], { capture: ['stdout'] })
   expect(await glob('**', { cwd: 'dist', dot: true })).toEqual([
     'foo',
     'foo/test.css',
@@ -44,7 +51,6 @@ export const it = () => withLocalTmpDir(__dirname, async () => {
   ` + '\n')
   expect(stdout).toMatch(new RegExp(endent`
     ^Copying config files …
-    package.json valid
     Updating README.md …
     Rendering Complete, saving \.css file\.\.\.
     Wrote CSS to .*?\/dist\/foo\/test\.css
@@ -54,4 +60,5 @@ export const it = () => withLocalTmpDir(__dirname, async () => {
     $
   `))
 })
+
 export const timeout = 10000

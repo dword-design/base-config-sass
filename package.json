@@ -1,41 +1,42 @@
 {
-  "name": "@dword-design/base-sass",
+  "name": "@dword-design/base-config-sass",
   "version": "1.1.0",
   "bugs": {
-    "url": "https://github.com/dword-design/base-sass/issues"
+    "url": "https://github.com/dword-design/base-config-sass/issues"
   },
-  "repository": "dword-design/base-sass",
+  "repository": "dword-design/base-config-sass",
   "license": "MIT",
   "author": "Sebastian Landwehr <info@dword-design.de>",
-  "contributors": [
-    "Renovate Bot (http://renovatebot.com)",
-    "dword-design (http://www.dword-design.de)"
-  ],
   "files": [
     "dist"
   ],
   "main": "dist/index.js",
-  "bin": {
-    "base-sass": "./dist/cli.js"
-  },
   "scripts": {
     "prepublishOnly": "base build",
     "start": "base start",
     "test": "base test"
   },
   "dependencies": {
-    "@dword-design/base": "^3.0.0",
+    "child-process-promise": "^2.2.1",
     "chokidar": "^3.3.0",
     "debounce": "^1.2.0",
+    "fs-extra": "^8.1.0",
     "glob-promise": "^3.4.0",
     "node-sass": "^4.13.0",
     "node-sass-import": "^2.0.1"
   },
   "devDependencies": {
+    "@dword-design/base": "^3.5.0",
+    "@dword-design/functions": "^2.2.2",
     "expect": "^24.9.0",
     "output-files": "^1.1.8",
+    "sort-package-json": "^1.31.0",
     "wait-for-change": "^1.1.1",
     "with-local-tmp-dir": "^2.2.2"
   },
+  "contributors": [
+    "Renovate Bot (http://renovatebot.com)",
+    "dword-design (http://www.dword-design.de)"
+  ],
   "maintainers": []
 }
