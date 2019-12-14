@@ -1,18 +1,25 @@
-import { spawn } from 'child_process'
+import { spawn } from 'child-process-promise'
 import withLocalTmpDir from 'with-local-tmp-dir'
 import expect from 'expect'
 import outputFiles from 'output-files'
-import { minimalProjectConfig } from '@dword-design/base'
+import { minimalPackageConfig, minimalProjectConfig } from '@dword-design/base'
 import glob from 'glob-promise'
-import { endent, omit } from '@functions'
-import { readFile, outputFile } from 'fs'
+import { endent, omit } from '@dword-design/functions'
+import { readFile, outputFile } from 'fs-extra'
 import P from 'path'
 import waitForChange from 'wait-for-change'
+import sortPackageJson from 'sort-package-json'
 
 export const it = () => withLocalTmpDir(__dirname, async () => {
   await outputFiles({
     ...minimalProjectConfig |> omit('src/index.js'),
     'dist/foo.txt': 'foo',
+    'package.json': JSON.stringify(sortPackageJson({
+      ...minimalPackageConfig,
+      devDependencies: {
+        '@dword-design/base-config-sass': '^1.0.0',
+      },
+    }), undefined, 2),
     'src/test.txt': 'foo',
     'src/index.scss': endent`
       $color: red;
@@ -21,14 +28,11 @@ export const it = () => withLocalTmpDir(__dirname, async () => {
       }
     `,
   })
-  const childProcess = spawn('base-sass', ['start'], { capture: ['stdout'] })
+  const childProcess = spawn('base', ['start'], { capture: ['stdout'] })
     .catch(error => {
       if (error.code === null) {
         expect(error.stdout).toMatch(new RegExp(endent`
-          ^Copying config files …
-          package.json valid
-          Updating README.md …
-          Rendering Complete, saving \.css file\.\.\.
+          ^Rendering Complete, saving \.css file\.\.\.
           Wrote CSS to .*?\/dist\/index\.css
           Wrote 1 CSS files to .*\/dist
           Rendering Complete, saving \.css file\.\.\.
