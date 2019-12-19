@@ -2,7 +2,6 @@ import { spawn } from 'child-process-promise'
 import withLocalTmpDir from 'with-local-tmp-dir'
 import expect from 'expect'
 import outputFiles from 'output-files'
-import { minimalPackageConfig, minimalProjectConfig } from '@dword-design/base'
 import glob from 'glob-promise'
 import { endent, omit } from '@dword-design/functions'
 import { readFile, outputFile } from 'fs-extra'
@@ -11,6 +10,7 @@ import waitForChange from 'wait-for-change'
 import sortPackageJson from 'sort-package-json'
 
 export const it = () => withLocalTmpDir(__dirname, async () => {
+  const { minimalPackageConfig, minimalProjectConfig } = require('@dword-design/base')
   await outputFiles({
     ...minimalProjectConfig |> omit('src/index.js'),
     'dist/foo.txt': 'foo',
