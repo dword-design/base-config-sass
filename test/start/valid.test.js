@@ -16,7 +16,7 @@ export default () => withLocalTmpDir(__dirname, async () => {
     'package.json': JSON.stringify(sortPackageJson({
       ...packageConfig,
       devDependencies: {
-        '@dword-design/base-config-css': '^1.0.0',
+        '@dword-design/base-config-sass': '^1.0.0',
       },
     }), undefined, 2),
     'src/test.txt': 'foo',
@@ -31,12 +31,10 @@ export default () => withLocalTmpDir(__dirname, async () => {
     .catch(error => {
       if (error.code === null) {
         expect(error.stdout).toMatch(new RegExp(endent`
-          ^Rendering Complete, saving \.css file\.\.\.
-          Wrote CSS to .*?\/dist\/index\.css
-          Wrote 1 CSS files to .*\/dist
-          Rendering Complete, saving \.css file\.\.\.
-          Wrote CSS to .*?\/dist\/index\.css
-          Wrote 1 CSS files to .*?\/dist
+          ^Copying sass files …
+          Sass files successfully copied.
+          Copying sass files …
+          Sass files successfully copied.
           $
         `))
       } else {
@@ -45,24 +43,28 @@ export default () => withLocalTmpDir(__dirname, async () => {
     })
     .childProcess
   try {
-    await waitForChange(P.join('dist', 'index.css'))
-    expect(await glob('**', { cwd: 'dist', dot: true })).toEqual(['index.css'])
-    expect(await readFile(P.resolve('dist', 'index.css'), 'utf8')).toEqual(endent`
+    await waitForChange(P.join('dist', 'index.scss'))
+    expect(await glob('**', { cwd: 'dist', dot: true })).toEqual(['index.scss', 'test.txt'])
+    expect(await readFile(P.resolve('dist', 'index.scss'), 'utf8')).toEqual(endent`
+      $color: red;
       body {
-        background: red; }
-    ` + '\n')
+        background: $color;
+      }
+    `)
     outputFile(P.join('src', 'index.scss'), endent`
       $color: green;
       body {
         background: $color;
       }
     `)
-    await waitForChange(P.join('dist', 'index.css'))
-    expect(await glob('**', { cwd: 'dist', dot: true })).toEqual(['index.css'])
-    expect(await readFile(P.resolve('dist', 'index.css'), 'utf8')).toEqual(endent`
+    await waitForChange(P.join('dist', 'index.scss'))
+    expect(await glob('**', { cwd: 'dist', dot: true })).toEqual(['index.scss', 'test.txt'])
+    expect(await readFile(P.resolve('dist', 'index.scss'), 'utf8')).toEqual(endent`
+      $color: green;
       body {
-        background: green; }
-    ` + '\n')
+        background: $color;
+      }
+    `)
   } finally {
     childProcess.kill()
   }

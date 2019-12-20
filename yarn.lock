@@ -792,6 +792,17 @@
     projectz "^1.12.0"
     safe-readfile "^1.0.2"
 
+"@dword-design/depcheck-sass-parser@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@dword-design/depcheck-sass-parser/-/depcheck-sass-parser-1.0.0.tgz#08ad77d76922ccd28f239aa3ce0c4bdec0500232"
+  integrity sha512-+0MS7x7WRrUxN0h/Pu/aVa+v0I5OpJ3Qz3AMgKpLAuLeOIMWxqLcV+flocWcO7nJfpoyzp3P/4RR2MynfnX1Lw==
+  dependencies:
+    "@dword-design/functions" "^2.2.4"
+    "@dword-design/node-sass-importer" "^1.0.0"
+    get-package-name "^1.1.0"
+    node-sass "^4.13.0"
+    require-package-name "^2.0.1"
+
 "@dword-design/eslint-config@^1.2.0":
   version "1.2.1"
   resolved "https://registry.yarnpkg.com/@dword-design/eslint-config/-/eslint-config-1.2.1.tgz#e3abc2a954919d6afe4d2b6d2a8a07100825e6c9"
@@ -807,7 +818,7 @@
     eslint-plugin-prefer-arrow "^1.1.6"
     get-package-name "^1.0.0"
 
-"@dword-design/functions@^2.2.2":
+"@dword-design/functions@^2.2.2", "@dword-design/functions@^2.2.4":
   version "2.2.4"
   resolved "https://registry.yarnpkg.com/@dword-design/functions/-/functions-2.2.4.tgz#c6f12f9313433226183e8741d17bf18edd67ef8f"
   integrity sha512-EOBaoFroyJ59QZ+Oh111SuTWltTnqMsTCDoRyzZtbYn6tFBqeR6p760KukkdO7oapaazaJZLm/B45f7q2XW1Zg==
@@ -823,6 +834,15 @@
   dependencies:
     package-name-regex "^1.0.1"
     stable-version-regex "^1.0.1"
+
+"@dword-design/node-sass-importer@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@dword-design/node-sass-importer/-/node-sass-importer-1.0.0.tgz#f92f114cf7658f91458a8bdbe5c8f94ac95650b4"
+  integrity sha512-3Ix0XImQxIGKAd9JFwX8D4p4lgpYykQiEGlesGjh1V81gz9dUwn0GXg2drwNfX74moRNEfq39fEPu88j/OVVuA==
+  dependencies:
+    fs-extra "^8.1.0"
+    jsontosass "^0.1.1"
+    resolve-from "^5.0.0"
 
 "@dword-design/test-aliases@^1.0.0":
   version "1.0.2"

@@ -15,10 +15,10 @@ export default () => withLocalTmpDir(__dirname, async () => {
     'package.json': JSON.stringify(sortPackageJson({
       ...packageConfig,
       devDependencies: {
-        '@dword-design/base-config-css': '^1.0.0',
+        '@dword-design/base-config-sass': '^1.0.0',
       },
     }), undefined, 2),
-    'src/foo/test.sass': endent`
+    'src/foo/test.scss': endent`
       $color: blue
       body
         color: $color
@@ -34,25 +34,26 @@ export default () => withLocalTmpDir(__dirname, async () => {
   const { stdout } = await spawn('base', ['build'], { capture: ['stdout'] })
   expect(await glob('**', { cwd: 'dist', dot: true })).toEqual([
     'foo',
-    'foo/test.css',
-    'index.css',
+    'foo/test.scss',
+    'index.scss',
+    'test.txt',
   ])
-  expect(await readFile(P.resolve('dist', 'foo', 'test.css'), 'utf8')).toEqual(endent`
+  expect(await readFile(P.resolve('dist', 'foo', 'test.scss'), 'utf8')).toEqual(endent`
+    $color: blue
+    body
+      color: $color
+  `)
+  expect(await readFile(P.resolve('dist', 'index.scss'), 'utf8')).toEqual(endent`
+    $color: red;
     body {
-      color: blue; }
-  ` + '\n')
-  expect(await readFile(P.resolve('dist', 'index.css'), 'utf8')).toEqual(endent`
-    body {
-      background: red; }
-  ` + '\n')
+      background: $color;
+    }
+  `)
   expect(stdout).toMatch(new RegExp(endent`
     ^Copying config files …
     Updating README.md …
-    Rendering Complete, saving \.css file\.\.\.
-    Wrote CSS to .*?\/dist\/foo\/test\.css
-    Rendering Complete, saving \.css file\.\.\.
-    Wrote CSS to .*?\/dist\/index\.css
-    Wrote 2 CSS files to .*?\/dist
+    Copying sass files …
+    Sass files successfully copied.
     $
   `))
 })

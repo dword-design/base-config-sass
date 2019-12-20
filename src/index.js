@@ -1,14 +1,15 @@
-import { spawn } from 'child-process-promise'
-import { remove } from 'fs-extra'
+import { remove, copy } from 'fs-extra'
 import chokidar from 'chokidar'
 import debounce from 'debounce'
 import nodeConfig from '@dword-design/base-config-node'
 import { merge } from '@dword-design/functions'
-import depcheckSassParser from './depcheck-sass-parser'
+import depcheckSassParser from '@dword-design/depcheck-sass-parser'
 
 const build = async () => {
+  console.log('Copying sass files …')
   await remove('dist')
-  await spawn('node-sass', ['--output', 'dist', '--importer', require.resolve('./importer'), 'src'], { stdio: 'inherit' })
+  await copy('src', 'dist')
+  console.log('Sass files successfully copied.')
 }
 
 export default {
