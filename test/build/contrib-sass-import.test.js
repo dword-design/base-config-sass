@@ -10,7 +10,10 @@ import { endent } from '@dword-design/functions'
 
 export default () => withLocalTmpDir(__dirname, async () => {
   await outputFiles({
-    'node_modules/bar/index.scss': '$color: red;',
+    'node_modules/bar': {
+      'index.scss': '$color: red;',
+      'package.json': JSON.stringify({ main: 'index.scss' }),
+    },
     'package.json': JSON.stringify(sortPackageJson({
       ...packageConfig,
       dependencies: {

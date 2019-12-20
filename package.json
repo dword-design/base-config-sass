@@ -26,7 +26,6 @@
     "glob-promise": "^3.4.0",
     "jsontosass": "^0.1.1",
     "node-sass": "^4.13.0",
-    "node-sass-tilde-importer": "^1.0.2",
     "resolve-from": "^5.0.0"
   },
   "devDependencies": {
