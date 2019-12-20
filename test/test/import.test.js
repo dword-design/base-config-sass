@@ -1,16 +1,16 @@
 import { spawn } from 'child-process-promise'
 import withLocalTmpDir from 'with-local-tmp-dir'
 import outputFiles from 'output-files'
-import { minimalPackageConfig, minimalProjectConfig } from '@dword-design/base-config-sass'
-import { omit } from '@dword-design/functions'
+import packageConfig from '../package.config'
 import sortPackageJson from 'sort-package-json'
-import { readFile } from 'fs-extra'
 
-export const it = () => withLocalTmpDir(__dirname, async () => {
+export default () => withLocalTmpDir(__dirname, async () => {
   await outputFiles({
-    ...minimalProjectConfig |> omit('src/index.js'),
+    'node_modules/foo': {
+      'index.scss': '',
+    },
     'package.json': JSON.stringify(sortPackageJson({
-      ...minimalPackageConfig,
+      ...packageConfig,
       dependencies: {
         'foo': '^1.0.0',
       },
@@ -18,9 +18,8 @@ export const it = () => withLocalTmpDir(__dirname, async () => {
         '@dword-design/base-config-sass': '^1.0.0',
       },
     }), undefined, 2),
-    'src/index.scss': '@import \'foo\'',
+    'src/index.scss': '@import \'~foo\';',
   })
-  await spawn('base', ['test'], { stdio: 'inherit' })
+  await spawn('base', ['build'])
+  await spawn('base', ['test'])
 })
-
-export const timeout = 10000

@@ -3,19 +3,18 @@ import withLocalTmpDir from 'with-local-tmp-dir'
 import expect from 'expect'
 import outputFiles from 'output-files'
 import glob from 'glob-promise'
-import { endent, omit } from '@dword-design/functions'
+import { endent } from '@dword-design/functions'
 import { readFile, outputFile } from 'fs-extra'
 import P from 'path'
 import waitForChange from 'wait-for-change'
 import sortPackageJson from 'sort-package-json'
+import packageConfig from '../package.config'
 
-export const it = () => withLocalTmpDir(__dirname, async () => {
-  const { minimalPackageConfig, minimalProjectConfig } = require('@dword-design/base')
+export default () => withLocalTmpDir(__dirname, async () => {
   await outputFiles({
-    ...minimalProjectConfig |> omit('src/index.js'),
     'dist/foo.txt': 'foo',
     'package.json': JSON.stringify(sortPackageJson({
-      ...minimalPackageConfig,
+      ...packageConfig,
       devDependencies: {
         '@dword-design/base-config-sass': '^1.0.0',
       },
@@ -76,4 +75,3 @@ export const it = () => withLocalTmpDir(__dirname, async () => {
     childProcess.kill()
   }
 })
-export const timeout = 10000
