@@ -26,6 +26,7 @@
     "glob-promise": "^3.4.0",
     "jsontosass": "^0.1.1",
     "node-sass": "^4.13.0",
+    "require-package-name": "^2.0.1",
     "resolve-from": "^5.0.0"
   },
   "devDependencies": {
