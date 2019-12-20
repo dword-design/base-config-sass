@@ -16,7 +16,7 @@ export default () => withLocalTmpDir(__dirname, async () => {
     'package.json': JSON.stringify(sortPackageJson({
       ...packageConfig,
       devDependencies: {
-        '@dword-design/base-config-sass': '^1.0.0',
+        '@dword-design/base-config-css': '^1.0.0',
       },
     }), undefined, 2),
     'src/test.txt': 'foo',
@@ -35,7 +35,7 @@ export default () => withLocalTmpDir(__dirname, async () => {
           Wrote CSS to .*?\/dist\/index\.css
           Wrote 1 CSS files to .*\/dist
           Rendering Complete, saving \.css file\.\.\.
-          Wrote CSS to .*?\/dist/index\.css
+          Wrote CSS to .*?\/dist\/index\.css
           Wrote 1 CSS files to .*?\/dist
           $
         `))
@@ -46,11 +46,7 @@ export default () => withLocalTmpDir(__dirname, async () => {
     .childProcess
   try {
     await waitForChange(P.join('dist', 'index.css'))
-    expect(await glob('**', { cwd: 'dist', dot: true })).toEqual([
-      'index.css',
-      'index.scss',
-      'test.txt',
-    ])
+    expect(await glob('**', { cwd: 'dist', dot: true })).toEqual(['index.css'])
     expect(await readFile(P.resolve('dist', 'index.css'), 'utf8')).toEqual(endent`
       body {
         background: red; }
@@ -62,11 +58,7 @@ export default () => withLocalTmpDir(__dirname, async () => {
       }
     `)
     await waitForChange(P.join('dist', 'index.css'))
-    expect(await glob('**', { cwd: 'dist', dot: true })).toEqual([
-      'index.css',
-      'index.scss',
-      'test.txt',
-    ])
+    expect(await glob('**', { cwd: 'dist', dot: true })).toEqual(['index.css'])
     expect(await readFile(P.resolve('dist', 'index.css'), 'utf8')).toEqual(endent`
       body {
         background: green; }

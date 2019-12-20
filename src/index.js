@@ -1,5 +1,5 @@
 import { spawn } from 'child-process-promise'
-import { copy, remove } from 'fs-extra'
+import { remove } from 'fs-extra'
 import chokidar from 'chokidar'
 import debounce from 'debounce'
 import nodeConfig from '@dword-design/base-config-node'
@@ -8,8 +8,7 @@ import depcheckSassParser from './depcheck-sass-parser'
 
 const build = async () => {
   await remove('dist')
-  await copy('src', 'dist')
-  await spawn('node-sass', ['src', '--output', 'dist', '--importer', require.resolve('./importer')], { stdio: 'inherit' })
+  await spawn('node-sass', ['--output', 'dist', '--importer', require.resolve('./importer'), 'src'], { stdio: 'inherit' })
 }
 
 export default {

@@ -13,7 +13,7 @@ export default () => withLocalTmpDir(__dirname, async () => {
     'package.json': JSON.stringify(sortPackageJson({
       ...packageConfig,
       devDependencies: {
-        '@dword-design/base-config-sass': '^1.0.0',
+        '@dword-design/base-config-css': '^1.0.0',
       },
     }), undefined, 2),
     src: {

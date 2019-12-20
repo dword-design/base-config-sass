@@ -15,7 +15,7 @@ export default () => withLocalTmpDir(__dirname, async () => {
     'package.json': JSON.stringify(sortPackageJson({
       ...packageConfig,
       devDependencies: {
-        '@dword-design/base-config-sass': '^1.0.0',
+        '@dword-design/base-config-css': '^1.0.0',
       },
     }), undefined, 2),
     'src/foo/test.sass': endent`
@@ -35,10 +35,7 @@ export default () => withLocalTmpDir(__dirname, async () => {
   expect(await glob('**', { cwd: 'dist', dot: true })).toEqual([
     'foo',
     'foo/test.css',
-    'foo/test.sass',
     'index.css',
-    'index.scss',
-    'test.txt',
   ])
   expect(await readFile(P.resolve('dist', 'foo', 'test.css'), 'utf8')).toEqual(endent`
     body {

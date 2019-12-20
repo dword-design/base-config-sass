@@ -1,10 +1,10 @@
 {
-  "name": "@dword-design/base-config-sass",
-  "version": "1.1.3",
+  "name": "@dword-design/base-config-css",
+  "version": "1.0.0",
   "bugs": {
-    "url": "https://github.com/dword-design/base-config-sass/issues"
+    "url": "https://github.com/dword-design/base-config-css/issues"
   },
-  "repository": "dword-design/base-config-sass",
+  "repository": "dword-design/base-config-css",
   "license": "MIT",
   "author": "Sebastian Landwehr <info@dword-design.de>",
   "files": [

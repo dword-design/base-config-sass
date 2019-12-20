@@ -16,7 +16,7 @@ export default () => withLocalTmpDir(__dirname, async () => {
         'bar': '^1.0.0',
       },
       devDependencies: {
-        '@dword-design/base-config-sass': '^1.0.0',
+        '@dword-design/base-config-css': '^1.0.0',
       },
     }), undefined, 2),
     'src/index.scss': '@import \'~bar\';',
