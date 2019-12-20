@@ -4,12 +4,12 @@ import chokidar from 'chokidar'
 import debounce from 'debounce'
 import nodeConfig from '@dword-design/base-config-node'
 import { merge } from '@dword-design/functions'
-import depcheck from 'depcheck'
+import depcheckSassParser from './depcheck-sass-parser'
 
 const build = async () => {
   await remove('dist')
   await copy('src', 'dist')
-  await spawn('node-sass', ['src', '--output', 'dist', '--importer', require.resolve('node-sass-tilde-importer')], { stdio: 'inherit' })
+  await spawn('node-sass', ['src', '--output', 'dist', '--importer', require.resolve('./importer')], { stdio: 'inherit' })
 }
 
 export default {
@@ -32,7 +32,7 @@ export default {
   depcheckConfig: nodeConfig.depcheckConfig
     |> merge({
       parsers: {
-        '*.scss': depcheck.parser.sass,
+        '*.scss': depcheckSassParser,
       },
     }),
 }
