@@ -6,30 +6,32 @@ import glob from 'glob-promise'
 import { endent } from '@dword-design/functions'
 import { readFile } from 'fs-extra'
 import P from 'path'
-import sortPackageJson from 'sort-package-json'
-import packageConfig from '../package.config'
 
 export default () => withLocalTmpDir(__dirname, async () => {
   await outputFiles({
     'dist/foo.txt': 'foo',
-    'package.json': JSON.stringify(sortPackageJson({
-      ...packageConfig,
-      devDependencies: {
-        '@dword-design/base-config-sass': '^1.0.0',
-      },
-    }), undefined, 2),
-    'src/foo/test.scss': endent`
-      $color: blue
-      body
-        color: $color
-    `,
-    'src/test.txt': 'foo',
-    'src/index.scss': endent`
-      $color: red;
-      body {
-        background: $color;
+    'package.json': endent`
+      {
+        "baseConfig": "sass",
+        "devDependencies": {
+          "@dword-design/base-config-sass": "^1.0.0"
+        }
       }
     `,
+    src: {
+      'foo/test.scss': endent`
+        $color: blue
+        body
+          color: $color
+      `,
+      'test.txt': 'foo',
+      'index.scss': endent`
+        $color: red;
+        body {
+          background: $color;
+        }
+      `,
+    },
   })
   const { stdout } = await spawn('base', ['build'], { capture: ['stdout'] })
   expect(await glob('**', { cwd: 'dist', dot: true })).toEqual([
@@ -50,10 +52,8 @@ export default () => withLocalTmpDir(__dirname, async () => {
     }
   `)
   expect(stdout).toMatch(new RegExp(endent`
-    ^Copying config files …
-    Updating README.md …
-    Copying sass files …
-    Sass files successfully copied.
+    ^Copying sass files …
+    Sass files successfully copied\.
     $
   `))
 })
