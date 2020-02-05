@@ -33,7 +33,7 @@ export default () => withLocalTmpDir(__dirname, async () => {
       `,
     },
   })
-  const { stdout } = await spawn('base', ['build'], { capture: ['stdout'] })
+  const { stdout } = await spawn('base', ['prepublishOnly'], { capture: ['stdout'] })
   expect(await glob('**', { cwd: 'dist', dot: true })).toEqual([
     'foo',
     'foo/test.scss',
