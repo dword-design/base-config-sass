@@ -1,12 +1,12 @@
 import { remove, copy } from 'fs-extra'
-import nodeConfig from '@dword-design/base-config-node'
+import depcheckConfig from '@dword-design/depcheck-config'
 import depcheckSassParser from '@dword-design/depcheck-sass-parser'
 
 export default {
   depcheckConfig: {
-    ...nodeConfig.depcheckConfig,
+    ...depcheckConfig,
     parsers: {
-      ...nodeConfig.parsers,
+      ...depcheckConfig.parsers,
       '*.scss': depcheckSassParser,
     },
   },
