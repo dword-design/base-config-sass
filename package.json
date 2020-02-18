@@ -10,9 +10,11 @@
     "dist"
   ],
   "scripts": {
+    "commit": "base commit",
     "depgraph": "base depgraph",
     "prepare": "base prepare",
     "prepublishOnly": "base prepublishOnly",
+    "release": "base release",
     "test": "base test"
   },
   "dependencies": {
@@ -21,9 +23,9 @@
     "fs-extra": "^8.1.0"
   },
   "devDependencies": {
-    "@dword-design/base": "^5.0.0",
+    "@dword-design/base": "^6.0.0",
     "@dword-design/functions": "^2.7.0",
-    "child-process-promise": "^2.2.1",
+    "execa": "^4.0.0",
     "glob-promise": "^3.4.0",
     "output-files": "^1.1.8",
     "with-local-tmp-dir": "^2.2.2"
