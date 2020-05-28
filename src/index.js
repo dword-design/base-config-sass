@@ -14,4 +14,5 @@ export default {
   commands: {
     prepublishOnly,
   },
+  npmPublish: true,
 }
