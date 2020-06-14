@@ -1,3 +1,10 @@
+## [2.0.10](https://github.com/dword-design/base-config-sass/compare/v2.0.9...v2.0.10) (2020-06-14)
+
+
+### Bug Fixes
+
+* add dist to gitignore ([5879522](https://github.com/dword-design/base-config-sass/commit/58795224fdd665a890bc562eeb2dc29fa0c4eed7))
+
 ## [2.0.9](https://github.com/dword-design/base-config-sass/compare/v2.0.8...v2.0.9) (2020-05-28)
 
 
