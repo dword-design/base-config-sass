@@ -10,6 +10,7 @@ export default {
       '*.scss': depcheckSassParser,
     },
   },
+  gitignore: ['/dist'],
   main: 'index.scss',
   commands: {
     prepublishOnly,
