@@ -11,7 +11,7 @@ export default {
     },
   },
   gitignore: ['/dist'],
-  main: 'index.scss',
+  main: 'dist/index.scss',
   commands: {
     prepublishOnly,
   },
