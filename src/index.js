@@ -11,6 +11,7 @@ export default {
     },
   },
   gitignore: ['/dist'],
+  editorIgnore: ['dist'],
   packageConfig: {
     main: 'dist/index.scss',
   },
