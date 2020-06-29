@@ -1,4 +1,4 @@
-import { remove, copy } from 'fs-extra'
+import { copy, remove } from 'fs-extra'
 
 export default async () => {
   console.log('Copying sass files …')

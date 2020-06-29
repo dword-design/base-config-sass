@@ -12,12 +12,12 @@
   "scripts": {
     "commit": "base commit",
     "dev": "base dev",
+    "lint": "base lint",
     "prepare": "base prepare",
     "prepublishOnly": "base prepublishOnly",
     "test": "base test"
   },
   "dependencies": {
-    "@dword-design/depcheck-config": "^1.1.1",
     "@dword-design/depcheck-sass-parser": "^1.0.0",
     "fs-extra": "^9.0.0"
   },
@@ -25,7 +25,7 @@
     "@dword-design/base": "^6.0.0",
     "@dword-design/functions": "^2.7.0",
     "execa": "^4.0.0",
-    "glob-promise": "^3.4.0",
+    "globby": "^11.0.1",
     "output-files": "^1.1.8",
     "with-local-tmp-dir": "^2.2.2"
   },

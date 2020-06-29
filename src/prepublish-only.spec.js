@@ -1,19 +1,21 @@
+import { endent, identity, sortBy } from '@dword-design/functions'
 import execa from 'execa'
-import withLocalTmpDir from 'with-local-tmp-dir'
-import outputFiles from 'output-files'
-import glob from 'glob-promise'
-import { endent } from '@dword-design/functions'
 import { readFile } from 'fs-extra'
+import globby from 'globby'
+import outputFiles from 'output-files'
 import P from 'path'
+import withLocalTmpDir from 'with-local-tmp-dir'
 
 export default {
   valid: () =>
     withLocalTmpDir(async () => {
       await outputFiles({
         'dist/foo.txt': 'foo',
+        'node_modules/base-config-foo/index.js':
+          "module.exports = require('../../../src')",
         'package.json': JSON.stringify(
           {
-            baseConfig: require.resolve('.'),
+            baseConfig: 'foo',
           },
           undefined,
           2
@@ -24,23 +26,22 @@ export default {
           body
             color: $color
         `,
-          'test.txt': 'foo',
           'index.scss': endent`
           $color: red;
           body {
             background: $color;
           }
         `,
+          'test.txt': 'foo',
         },
       })
       await execa.command('base prepare')
-      const { all } = await execa.command('base prepublishOnly', { all: true })
-      expect(await glob('**', { cwd: 'dist', dot: true })).toEqual([
-        'foo',
-        'foo/test.scss',
-        'index.scss',
-        'test.txt',
-      ])
+      const output = await execa.command('base prepublishOnly', { all: true })
+      expect(
+        globby('**', { cwd: 'dist', dot: true, filesOnly: false })
+          |> await
+          |> sortBy(identity)
+      ).toEqual(['foo/test.scss', 'index.scss', 'test.txt'])
       expect(await readFile(P.resolve('dist', 'foo', 'test.scss'), 'utf8'))
         .toEqual(endent`
       $color: blue
@@ -54,7 +55,7 @@ export default {
         background: $color;
       }
     `)
-      expect(all).toEqual(endent`
+      expect(output.all).toEqual(endent`
       Copying sass files …
       Sass files successfully copied.
     `)
