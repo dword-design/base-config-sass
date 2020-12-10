@@ -1,3 +1,10 @@
+## [2.0.16](https://github.com/dword-design/base-config-sass/compare/v2.0.15...v2.0.16) (2020-12-10)
+
+
+### Bug Fixes
+
+* **deps:** update dependency execa to v5 ([4981a04](https://github.com/dword-design/base-config-sass/commit/4981a041f9caed21e9cdfcc22efa4a391ff29cc4))
+
 ## [2.0.15](https://github.com/dword-design/base-config-sass/compare/v2.0.14...v2.0.15) (2020-12-02)
 
 
