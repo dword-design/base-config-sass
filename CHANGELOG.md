@@ -1,3 +1,10 @@
+## [2.0.17](https://github.com/dword-design/base-config-sass/compare/v2.0.16...v2.0.17) (2021-02-17)
+
+
+### Bug Fixes
+
+* upgrades ([ed3e556](https://github.com/dword-design/base-config-sass/commit/ed3e5560968beb5456d6e9b760ddeb56ed1ef865))
+
 ## [2.0.16](https://github.com/dword-design/base-config-sass/compare/v2.0.15...v2.0.16) (2020-12-10)
 
 
