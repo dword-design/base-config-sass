@@ -1,3 +1,10 @@
+## [2.0.18](https://github.com/dword-design/base-config-sass/compare/v2.0.17...v2.0.18) (2021-03-17)
+
+
+### Bug Fixes
+
+* lock file maintenance ([#18](https://github.com/dword-design/base-config-sass/issues/18)) ([6aab6ac](https://github.com/dword-design/base-config-sass/commit/6aab6acefe9522ddd912daed22ba3e4749f2a7d2))
+
 ## [2.0.17](https://github.com/dword-design/base-config-sass/compare/v2.0.16...v2.0.17) (2021-02-17)
 
 
