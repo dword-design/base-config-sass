@@ -32,6 +32,7 @@ export default {
             background: $color;
           }
         `,
+          'index.spec.js': '',
           'test.txt': 'foo',
         },
       })
