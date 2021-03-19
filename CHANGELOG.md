@@ -1,3 +1,10 @@
+## [2.0.19](https://github.com/dword-design/base-config-sass/compare/v2.0.18...v2.0.19) (2021-03-19)
+
+
+### Bug Fixes
+
+* do not copy test files ([#20](https://github.com/dword-design/base-config-sass/issues/20)) ([7b78990](https://github.com/dword-design/base-config-sass/commit/7b789900388efeb3702679cedb187612273f87c1))
+
 ## [2.0.18](https://github.com/dword-design/base-config-sass/compare/v2.0.17...v2.0.18) (2021-03-17)
 
 
