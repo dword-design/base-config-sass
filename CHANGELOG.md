@@ -1,3 +1,10 @@
+## [2.0.21](https://github.com/dword-design/base-config-sass/compare/v2.0.20...v2.0.21) (2021-03-23)
+
+
+### Bug Fixes
+
+* update dependency @dword-design/functions to v3 ([#22](https://github.com/dword-design/base-config-sass/issues/22)) ([c9006d9](https://github.com/dword-design/base-config-sass/commit/c9006d99e193d2044dd69366f8ef0dd4c8028024))
+
 ## [2.0.20](https://github.com/dword-design/base-config-sass/compare/v2.0.19...v2.0.20) (2021-03-22)
 
 
