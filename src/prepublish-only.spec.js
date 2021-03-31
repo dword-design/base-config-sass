@@ -37,6 +37,7 @@ export default {
         },
       })
       await execa.command('base prepare')
+
       const output = await execa.command('base prepublishOnly', { all: true })
       expect(
         globby('**', { cwd: 'dist', dot: true, filesOnly: false })
