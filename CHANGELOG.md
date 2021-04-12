@@ -1,3 +1,10 @@
+## [2.0.24](https://github.com/dword-design/base-config-sass/compare/v2.0.23...v2.0.24) (2021-04-12)
+
+
+### Bug Fixes
+
+* replace deprecated dependency ([#28](https://github.com/dword-design/base-config-sass/issues/28)) ([a1fb08e](https://github.com/dword-design/base-config-sass/commit/a1fb08ebef969d0dedad6c2a73a4ad45dfd0e6f5))
+
 ## [2.0.23](https://github.com/dword-design/base-config-sass/compare/v2.0.22...v2.0.23) (2021-04-12)
 
 
