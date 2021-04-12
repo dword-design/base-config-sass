@@ -1,4 +1,4 @@
-import depcheckSassParser from '@dword-design/depcheck-sass-parser'
+import depcheckParserSass from '@dword-design/depcheck-parser-sass'
 
 import prepublishOnly from './prepublish-only'
 
@@ -8,7 +8,7 @@ export default {
   },
   depcheckConfig: {
     parsers: {
-      '*.scss': depcheckSassParser,
+      '*.scss': depcheckParserSass,
     },
   },
   editorIgnore: ['dist'],
