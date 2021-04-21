@@ -1,3 +1,11 @@
+## [2.0.25](https://github.com/dword-design/base-config-sass/compare/v2.0.24...v2.0.25) (2021-04-21)
+
+
+### Bug Fixes
+
+* update config files ([ecccb93](https://github.com/dword-design/base-config-sass/commit/ecccb933121ab94c91df059dd52f2383df821569))
+* updated package.json[description] ([#35](https://github.com/dword-design/base-config-sass/issues/35)) ([550584e](https://github.com/dword-design/base-config-sass/commit/550584e1d12074f7a534cc454a7c6f5b5acfd63d))
+
 ## [2.0.24](https://github.com/dword-design/base-config-sass/compare/v2.0.23...v2.0.24) (2021-04-12)
 
 
