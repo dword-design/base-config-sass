@@ -1,3 +1,10 @@
+## [2.0.27](https://github.com/dword-design/base-config-sass/compare/v2.0.26...v2.0.27) (2021-04-26)
+
+
+### Bug Fixes
+
+* update dependency with-local-tmp-dir to v3 ([#34](https://github.com/dword-design/base-config-sass/issues/34)) ([815802b](https://github.com/dword-design/base-config-sass/commit/815802b943012ce8611e6bf0f79b1ee8445e2502))
+
 ## [2.0.26](https://github.com/dword-design/base-config-sass/compare/v2.0.25...v2.0.26) (2021-04-22)
 
 
