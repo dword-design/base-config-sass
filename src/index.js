@@ -3,6 +3,7 @@ import depcheckParserSass from '@dword-design/depcheck-parser-sass'
 import prepublishOnly from './prepublish-only'
 
 export default {
+  allowedMatches: ['src'],
   commands: {
     prepublishOnly,
   },
