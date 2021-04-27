@@ -1,3 +1,10 @@
+## [2.0.28](https://github.com/dword-design/base-config-sass/compare/v2.0.27...v2.0.28) (2021-04-27)
+
+
+### Bug Fixes
+
+* add src to allowed matches ([#39](https://github.com/dword-design/base-config-sass/issues/39)) ([ab97157](https://github.com/dword-design/base-config-sass/commit/ab97157f1778843b88f6fcc882a4b67484e5c790))
+
 ## [2.0.27](https://github.com/dword-design/base-config-sass/compare/v2.0.26...v2.0.27) (2021-04-26)
 
 
