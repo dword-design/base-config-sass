@@ -1,3 +1,10 @@
+## [2.0.30](https://github.com/dword-design/base-config-sass/compare/v2.0.29...v2.0.30) (2021-05-03)
+
+
+### Bug Fixes
+
+* add coverage file extensions ([#41](https://github.com/dword-design/base-config-sass/issues/41)) ([610206d](https://github.com/dword-design/base-config-sass/commit/610206d81e5e4a5ae386547dff4f04b4685f1f38))
+
 ## [2.0.29](https://github.com/dword-design/base-config-sass/compare/v2.0.28...v2.0.29) (2021-04-28)
 
 
