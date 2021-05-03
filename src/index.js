@@ -18,4 +18,5 @@ export default {
   packageConfig: {
     main: 'dist/index.scss',
   },
+  coverageFileExtensions: ['.scss'],
 }
