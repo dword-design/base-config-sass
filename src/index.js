@@ -7,6 +7,7 @@ export default {
   commands: {
     prepublishOnly,
   },
+  coverageFileExtensions: ['.scss'],
   depcheckConfig: {
     parsers: {
       '*.scss': depcheckParserSass,
@@ -18,5 +19,4 @@ export default {
   packageConfig: {
     main: 'dist/index.scss',
   },
-  coverageFileExtensions: ['.scss'],
 }
