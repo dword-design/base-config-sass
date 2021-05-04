@@ -1,3 +1,11 @@
+## [2.0.32](https://github.com/dword-design/base-config-sass/compare/v2.0.31...v2.0.32) (2021-05-04)
+
+
+### Bug Fixes
+
+* update dependency fs-extra to v10 ([#45](https://github.com/dword-design/base-config-sass/issues/45)) ([f85aaa3](https://github.com/dword-design/base-config-sass/commit/f85aaa341d1635e2261b1b70ed33ca3fe8d69445))
+* update dependency with-local-tmp-dir to v4 ([#47](https://github.com/dword-design/base-config-sass/issues/47)) ([f05f59b](https://github.com/dword-design/base-config-sass/commit/f05f59bedcb97e9cd217a74f18dde2590e7da95f))
+
 ## [2.0.31](https://github.com/dword-design/base-config-sass/compare/v2.0.30...v2.0.31) (2021-05-03)
 
 
