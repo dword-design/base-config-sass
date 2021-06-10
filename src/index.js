@@ -10,7 +10,7 @@ export default {
   coverageFileExtensions: ['.scss'],
   depcheckConfig: {
     parsers: {
-      '*.scss': depcheckParserSass,
+      '**/*.scss': depcheckParserSass,
     },
   },
   editorIgnore: ['dist'],
