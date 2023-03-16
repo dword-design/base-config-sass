@@ -1,3 +1,11 @@
+## [2.0.44](https://github.com/dword-design/base-config-sass/compare/v2.0.43...v2.0.44) (2023-03-16)
+
+
+### Bug Fixes
+
+* update dependency @dword-design/functions to v4.1.0 ([cf50555](https://github.com/dword-design/base-config-sass/commit/cf5055554d82c6fd6d0cce9382afd86634f58916))
+* update dependency with-local-tmp-dir to v4.1.0 ([06d4460](https://github.com/dword-design/base-config-sass/commit/06d446008ca2ea8893aff8d8e2474f4b341da4ad))
+
 ## [2.0.43](https://github.com/dword-design/base-config-sass/compare/v2.0.42...v2.0.43) (2023-03-15)
 
 
