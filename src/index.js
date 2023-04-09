@@ -1,6 +1,6 @@
 import depcheckParserSass from '@dword-design/depcheck-parser-sass'
 
-import prepublishOnly from './prepublish-only'
+import prepublishOnly from './prepublish-only.js'
 
 export default {
   allowedMatches: ['src'],
