@@ -5,33 +5,38 @@
   "funding": "https://github.com/sponsors/dword-design",
   "license": "MIT",
   "author": "Sebastian Landwehr <info@sebastianlandwehr.com>",
-  "main": "dist/index.js",
+  "type": "module",
   "files": [
     "dist"
   ],
   "scripts": {
     "checkUnknownFiles": "base checkUnknownFiles",
     "commit": "base commit",
+    "depcheck": "base depcheck",
     "dev": "base dev",
     "lint": "base lint",
     "prepare": "base prepare",
     "prepublishOnly": "base prepublishOnly",
-    "test": "base test"
+    "test": "base test",
+    "typecheck": "base typecheck",
+    "verify": "base verify"
   },
   "dependencies": {
-    "@dword-design/depcheck-parser-sass": "^2.0.0",
-    "@dword-design/functions": "^4.0.0",
-    "fs-extra": "^10.0.0",
-    "globby": "^11.0.2"
+    "@dword-design/depcheck-parser-sass": "^5.0.0",
+    "fs-extra": "^11.1.1",
+    "globby": "^16.0.0"
   },
   "devDependencies": {
-    "@dword-design/base": "^8.0.0",
-    "execa": "^5.0.0",
-    "output-files": "^2.0.0",
-    "with-local-tmp-dir": "^4.0.0"
+    "@dword-design/base": "^16",
+    "@playwright/test": "^1.57.0",
+    "@types/fs-extra": "^11.0.4",
+    "endent": "npm:@dword-design/endent@^1.4.7",
+    "execa": "^9.6.1",
+    "output-files": "^3.0.0"
   },
+  "packageManager": "pnpm@10.25.0+sha512.5e82639027af37cf832061bcc6d639c219634488e0f2baebe785028a793de7b525ffcd3f7ff574f5e9860654e098fe852ba8ac5dd5cefe1767d23a020a92f501",
   "engines": {
-    "node": ">=12"
+    "node": ">=22"
   },
   "publishConfig": {
     "access": "public"
