@@ -1,3 +1,17 @@
+# [3.0.0](https://github.com/dword-design/base-config-sass/compare/v2.0.44...v3.0.0) (2025-12-11)
+
+
+### Bug Fixes
+
+* lock file maintenance ([#104](https://github.com/dword-design/base-config-sass/issues/104)) ([87ca296](https://github.com/dword-design/base-config-sass/commit/87ca2964c6b4372c94c4c54113bd8967ace5ae5f))
+* update config files ([4340e6e](https://github.com/dword-design/base-config-sass/commit/4340e6e3e80548a537efe2c82a240cd57a197f69))
+
+
+### BREAKING CHANGES
+
+* node >= 22
+* esm
+
 ## [2.0.44](https://github.com/dword-design/base-config-sass/compare/v2.0.43...v2.0.44) (2023-03-16)
 
 
